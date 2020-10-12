@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Book from './Book';
 
 
-const Booklist  = (props) => {
+const BooksList  = ({books}) => {
     return(
         <table>
             <th>Header</th>
@@ -17,4 +18,4 @@ const mapStateToProps = (state) => ({
       books: state.books
   });
 
-export default connect(mapStateToProps)(Booklist);
+export default connect(mapStateToProps)(BooksList);

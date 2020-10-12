@@ -7,9 +7,9 @@ const Books = () => {
         <h4>ADD NEW BOOK</h4>
         <input type='text'/>
         <select>
-            {category.forEach(item => {
+        {category.forEach(item => (
                 <option>{item}</option>
-            })}
+        ))}
         </select>
         <button type='submit'>Add a new book</button>
     </div>

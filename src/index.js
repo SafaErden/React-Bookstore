@@ -1,13 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+import books from './reducers';
 import './index.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 
+const defaultState = [
+    {
+      id: Math.floor(Math.random() * 1000),
+      title: "Safa and his projects", 
+      category: "Actions"
+    },
+    {
+      id: Math.floor(Math.random() * 1000),
+      title: "Taiwo and her projects", 
+      category: "Sci-fi"
+    },
+  ];
+
+
+
+const store = createStore(books, { books: defaultState });
+
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}> 
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root'),
 );
 
