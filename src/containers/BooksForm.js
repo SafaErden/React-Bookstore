@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { addBook } from '../actions/index';
-import categories from '../components/Categories';
+import categories from '../constants/Categories';
 
 class BooksForm extends React.Component {
   constructor(props) {

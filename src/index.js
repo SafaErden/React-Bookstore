@@ -11,12 +11,12 @@ const books = [
   {
     id: Math.floor(Math.random() * 1000),
     title: 'Safa and his projects',
-    category: 'Actions',
+    category: 'Action',
   },
   {
     id: Math.floor(Math.random() * 1000),
     title: 'Taiwo and her projects',
-    category: 'Sci-fi',
+    category: 'Sci-Fi',
   },
 ];
 
