@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from "react-redux";
-import {addBook} from '../acitons/index';
+import {addBook} from '../actions/index';
 import PropTypes from 'prop-types';
 
 const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];

@@ -1,12 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Book from './Book';
-import {removeBook} from '../acitons/index';
+import Book from '../components/Book';
+import {removeBook} from '../actions/index';
 
-handleRemoveBook = () => {
-    
-}
+
 
 
 const BooksList = ({ books, removeBook }) => {
