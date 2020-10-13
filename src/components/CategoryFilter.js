@@ -1,13 +1,16 @@
 import React from 'react';
-import categories from '../components/Categories';
+import PropTypes from 'prop-types';
+import categories from './Categories';
 
-const CategoryFilter = ({handleFilterChange}) => {
-    return (
-        <select onChange= {handleFilterChange}>
-            <option value='ALL'>ALL</option>
-            {categories.map( category => <option value={category} key={category}>{category}</option>)}
-        </select>
-    );
-}
+const CategoryFilter = ({ handleFilterChange }) => (
+  <select onChange={handleFilterChange}>
+    <option value="ALL">ALL</option>
+    {categories.map(category => <option value={category} key={category}>{category}</option>)}
+  </select>
+);
+
+CategoryFilter.propTypes = {
+  handleFilterChange: PropTypes.func.isRequired,
+};
 
 export default CategoryFilter;

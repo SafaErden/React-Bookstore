@@ -19,7 +19,6 @@ const books = [
   },
 ];
 
-
 const store = createStore(mainReducer, { books });
 
 ReactDOM.render(
