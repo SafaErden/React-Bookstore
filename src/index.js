@@ -19,9 +19,8 @@ const books = [
   },
 ];
 
-const filter = "All";
 
-const store = createStore(mainReducer, { books,filter });
+const store = createStore(mainReducer, { books });
 
 ReactDOM.render(
   <Provider store={store}>

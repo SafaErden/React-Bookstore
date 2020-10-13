@@ -22,8 +22,21 @@ class BooksList extends React.Component {
   }
 
   render() {
-    const { books } = this.props;
+    const { books, filter } = this.props;
+    let bookslist;
+    if (filter === 'ALL')  {
+      bookslist = books.map(book => (
+        <Book book={book} key={Math.random()} handleRemoveBook={this.handleRemoveBook} />
+       ));
+      }
+      else {
+        bookslist = books
+        .filter(book => book.category === filter)
+        .map(book => (
+          <Book removeBook={this.removeBook} book={book} key={Math.random()} />
+        ));
 
+      }
     return (
       <div>
         <CategoryFilter handleFilterChange={this.handleFilterChange}/>
@@ -34,10 +47,7 @@ class BooksList extends React.Component {
             <th>Category</th>
             <th>Remove </th>
           </tr>
-
-          {books.map(book => (
-            <Book book={book} key={Math.random()} handleRemoveBook={this.handleRemoveBook} />
-          ))}
+         {bookslist}
         </table>
       </div>
     );
