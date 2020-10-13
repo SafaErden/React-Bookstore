@@ -8,12 +8,12 @@ const Book = ({ book, handleRemoveBook }) => {
     <div className="d-flex flex-row align-items-center justify-content-between border mx-5 my-3 p-2 bg-white">
       <div className="d-flex align-items-center justify-content-between w-100">
         <div>
-          <div className="text-secondary"><small>Action</small></div>
-          <div className="h5 font-weight-bold m-0 p-0">The Hunger Games</div>
+          <div className="text-secondary"><small>{category}</small></div>
+          <div className="h5 font-weight-bold m-0 p-0">{title}</div>
           <div className="text-primary m-0 p-0"><small>Safa ERDEN</small></div>
           <div className="mt-3">
             <span className="text-primary m-0 mr-3 p-0"><small>Comments</small></span>
-            <span className="text-primary m-0 mr-3 p-0"><small>Remove</small></span>
+            <span className="text-primary m-0 mr-3 p-0 btn" onClick={e => { e.preventDefault(); handleRemoveBook(id); }}><small>Remove</small></span>
             <span className="text-primary m-0 mr-3 p-0"><small>Edit</small></span>
           </div>
         </div>
