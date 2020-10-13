@@ -41,16 +41,16 @@ class BooksForm extends React.Component {
   render() {
     const { title } = this.state;
     return (
-      <div className="my-3 w-100 px-5">
-        <h4 className="text-secondary font-weight-bold h5">ADD NEW BOOK</h4>
-        <form onSubmit={this.handleSubmit} className="d-flex justify-content-between">
+      <div className="m-0 w-100 px-5 d-flex flex-column align-items-center justify-content-between bg-light py-3 pb-5 border-top border-bottom">
+        <h4 className="text-secondary font-weight-bold h5 w-100">ADD NEW BOOK</h4>
+        <form onSubmit={this.handleSubmit} className="d-flex justify-content-between w-100 mb-5 pb-5">
           <input type="text" onChange={this.handleChange} value={title} name="title" placeholder="Book Title" className="w-50" />
           <select onChange={this.handleChange} name="category" className="w-25">
             {categories.map(item => (
               <option value={item} key={item}>{item}</option>
             ))}
           </select>
-          <button type="submit" className="bg-primary text-white border-0 px-5 py-1"><small>ADD BOOK</small></button>
+          <button type="submit" className="bg-primary text-white border-0 px-3 py-1"><small>ADD BOOK</small></button>
         </form>
       </div>
 
