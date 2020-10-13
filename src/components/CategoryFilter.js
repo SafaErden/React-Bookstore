@@ -1,9 +1,11 @@
 import React from 'react';
+import categories from '../components/Categories';
 
 const CategoryFilter = () => {
     return (
-        <select>
-
+        <select >
+            <option value='ALL'>ALL</option>
+            {categories.map( category => <option value={category} key={category}>{category}</option>)}
         </select>
     );
 }
