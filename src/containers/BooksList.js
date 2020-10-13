@@ -37,9 +37,9 @@ class BooksList extends React.Component {
         ));
     }
     return (
-      <div className="w-100 shadow-lg" >
-        <NavBar handleFilterChange={this.handleFilterChange}/>
-          {bookslist}
+      <div className="w-100 shadow-lg">
+        <NavBar handleFilterChange={this.handleFilterChange} />
+        {bookslist}
       </div>
     );
   }
