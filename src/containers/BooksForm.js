@@ -11,7 +11,7 @@ class BooksForm extends React.Component{
     this.state = {
       id: '',
       title: '',
-      category: ''
+      category: 'Action'
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,13 +21,20 @@ class BooksForm extends React.Component{
   }
 
   handleSubmit(e){
-    e.preventDefault();
-    const {addBook} = this.props;
-    addBook(this.state);
-    this.setState({
-      title: ''
-    })
-    e.target.reset();
+    if(this.state.title !== ''){
+      e.preventDefault();
+      const {addBook} = this.props;
+      addBook(this.state);
+      this.setState({
+        id: '',
+        title: '',
+        category: 'Action'
+      });
+      e.target.reset();
+    } else {
+      e.preventDefault();
+      alert('Please Type a valid Book Title');
+    }
   }
   render() {
     const {title} = this.state;
@@ -38,7 +45,7 @@ class BooksForm extends React.Component{
           <input type="text" onChange={this.handleChange} value={title} name="title" placeHolder="Type Book Title"/>
           <select onChange={this.handleChange} name="category">
             {categories.map((item,index) => (
-              <option value={item} key={index} >{item}</option>
+              <option value={item} key={index}>{item}</option>
             ))}
           </select>
           <button type="submit">Add a new book</button>
