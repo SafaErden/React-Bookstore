@@ -17,8 +17,8 @@ const Book = ({ book, handleRemoveBook }) => {
         {category}
         {' '}
       </td>
-      <td><button onClick={e => {e.preventDefault(); handleRemoveBook(id)}}>Remove</button></td>
-      
+      <td><button type="button" onClick={e => { e.preventDefault(); handleRemoveBook(id); }}>Remove</button></td>
+
     </tr>
   );
 };
@@ -28,5 +28,6 @@ Book.propTypes = {
     title: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
   }).isRequired,
+  handleRemoveBook: PropTypes.func.isRequired,
 };
 export default Book;

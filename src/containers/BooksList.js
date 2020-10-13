@@ -2,10 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
-import {removeBook} from '../actions/index';
-
-
-
+import { removeBook } from '../actions/index';
 
 class BooksList extends React.Component {
   constructor(props) {
@@ -13,13 +10,14 @@ class BooksList extends React.Component {
     this.handleRemoveBook = this.handleRemoveBook.bind(this);
   }
 
-  handleRemoveBook = (id) => {
-    const {removeBook} = this.props;
-     removeBook(id);
+  handleRemoveBook = id => {
+    const { removeBook } = this.props;
+    removeBook(id);
   }
+
   render() {
-   const {books} = this.props; 
-    
+    const { books } = this.props;
+
     return (
       <table>
         <tr>
@@ -30,20 +28,17 @@ class BooksList extends React.Component {
         </tr>
 
         {books.map(book => (
-      <Book book={book} key={Math.random()} handleRemoveBook={this.handleRemoveBook} />
-    ))}
+          <Book book={book} key={Math.random()} handleRemoveBook={this.handleRemoveBook} />
+        ))}
       </table>
     );
-    }
-
-  
-  
-};
+  }
+}
 
 BooksList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.object).isRequired,
+  removeBook: PropTypes.func.isRequired,
 };
-
 const mapStateToProps = state => ({
   books: state.books,
 });
