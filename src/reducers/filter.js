@@ -1,10 +1,9 @@
 const filterReducer = (state='ALL', action) => {
-    switch (action.type) {
-        case 'CHANGE_FILTER':
-            return state.filter(book => action.category === book.category);
-        default:
-            return state;
+    if (action.category) {
+        const updated = action.category
+        return updated;
     }
+    return state;
 }
 
 export default filterReducer;
