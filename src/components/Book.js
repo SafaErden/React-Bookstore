@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Book = ({ book }) => {
+const Book = ({ book, handleRemoveBook }) => {
   const { id, title, category } = book;
   return (
     <tr>
@@ -17,6 +17,8 @@ const Book = ({ book }) => {
         {category}
         {' '}
       </td>
+      <td><button onClick={e => {e.preventDefault(); handleRemoveBook(id)}}>Remove</button></td>
+      
     </tr>
   );
 };

@@ -24,10 +24,13 @@ class BooksForm extends React.Component{
     e.preventDefault();
     const {addBook} = this.props;
     addBook(this.state);
+    this.setState({
+      title: ''
+    })
     e.target.reset();
   }
   render() {
-    const {title, category} = this.state;
+    const {title} = this.state;
     return (
       <div className="bookform-section">
         <form  onSubmit={this.handleSubmit}>

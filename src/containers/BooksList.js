@@ -7,21 +7,37 @@ import {removeBook} from '../actions/index';
 
 
 
-const BooksList = ({ books, removeBook }) => {
-  const bookList = books.map(book => (
-    <Book book={book} key={Math.random()} removeBook={removeBook} />
-  ));
-  return (
-    <table>
-      <tr>
-        <th>Book ID</th>
-        <th>Title</th>
-        <th>Category</th>
-        <th>Category</th>
-      </tr>
-      {bookList}
-    </table>
-  );
+class BooksList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleRemoveBook = this.handleRemoveBook.bind(this);
+  }
+
+  handleRemoveBook = (id) => {
+    const {removeBook} = this.props;
+     removeBook(id);
+  }
+  render() {
+   const {books} = this.props; 
+    
+    return (
+      <table>
+        <tr>
+          <th>Book ID</th>
+          <th>Title</th>
+          <th>Category</th>
+          <th>Remove </th>
+        </tr>
+
+        {books.map(book => (
+      <Book book={book} key={Math.random()} handleRemoveBook={this.handleRemoveBook} />
+    ))}
+      </table>
+    );
+    }
+
+  
+  
 };
 
 BooksList.propTypes = {
@@ -32,4 +48,10 @@ const mapStateToProps = state => ({
   books: state.books,
 });
 
-export default connect(mapStateToProps)(BooksList);
+const mapDispatchToProps = dispatch => ({
+  removeBook: id => {
+    dispatch(removeBook(id));
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
