@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import books from './reducers/books';
+import mainReducer from './reducers/index';
 import './index.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
@@ -20,7 +20,7 @@ const defaultState = [
   },
 ];
 
-const store = createStore(books, { books: defaultState });
+const store = createStore(mainReducer, { books: defaultState });
 
 ReactDOM.render(
   <Provider store={store}>
