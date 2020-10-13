@@ -12,9 +12,9 @@ const Book = ({ book, handleRemoveBook }) => {
           <div className="h5 font-weight-bold m-0 p-0">{title}</div>
           <div className="text-primary m-0 p-0"><small>Safa ERDEN</small></div>
           <div className="mt-3">
-            <span className="text-primary m-0 mr-3 p-0"><small>Comments</small></span>
-            <span className="text-primary m-0 mr-3 p-0 btn" onClick={e => { e.preventDefault(); handleRemoveBook(id); }}><small>Remove</small></span>
-            <span className="text-primary m-0 mr-3 p-0"><small>Edit</small></span>
+            <span className="text-primary m-0  p-0 pr-2 btn border-right  rounded-0"><small>Comments</small></span>
+            <span className="text-primary m-0  p-0 pr-2 pl-2 btn border-right rounded-0" onClick={e => { e.preventDefault(); handleRemoveBook(id); }}><small>Remove</small></span>
+            <span className="text-primary m-0  p-0 pr-3 pl-2 btn border-right rounded-0"><small>Edit</small></span>
           </div>
         </div>
         <div className="border-right d-flex align-items-center pr-4">
@@ -28,7 +28,7 @@ const Book = ({ book, handleRemoveBook }) => {
       <div className="d-flex flex-column col-4">
         <div className="text-secondary"><small>CURRENT CHAPTER</small></div>
         <div className="h6">Chapter 17</div>
-        <button className="bg-primary border-0"><small>UPDATE PROGRESS</small></button>
+        <button className="bg-primary border-0 text-white rounded"><small>UPDATE PROGRESS</small></button>
       </div>
     </div>
   );

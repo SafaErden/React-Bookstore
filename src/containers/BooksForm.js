@@ -50,7 +50,7 @@ class BooksForm extends React.Component {
               <option value={item} key={item}>{item}</option>
             ))}
           </select>
-          <button type="submit" className="bg-primary text-white border-0 px-3 py-1"><small>ADD BOOK</small></button>
+          <button type="submit" className="bg-primary text-white border-0 px-3 py-1 rounded"><small>ADD BOOK</small></button>
         </form>
       </div>
 
