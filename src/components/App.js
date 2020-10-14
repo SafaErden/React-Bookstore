@@ -5,7 +5,7 @@ import BooksForm from '../containers/BooksForm';
 function App() {
   return (
     <div>
-      <BooksList key={12345} />
+      <BooksList />
       <BooksForm />
     </div>
   );
