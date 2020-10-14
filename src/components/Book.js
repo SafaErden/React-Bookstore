@@ -17,7 +17,7 @@ const Book = ({ book, handleRemoveBook }) => {
         {category}
         {' '}
       </td>
-      <td><button type="button" onClick={e => { e.preventDefault(); handleRemoveBook(id); }}>Remove</button></td>
+      <td><button type="button" onClick={e => { handleRemoveBook(id); }}>Remove</button></td>
 
     </tr>
   );
