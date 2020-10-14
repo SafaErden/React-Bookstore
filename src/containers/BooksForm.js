@@ -33,7 +33,7 @@ class BooksForm extends React.Component {
         category: 'Action',
       });
       e.target.reset();
-    } 
+    }
   }
 
   render() {
@@ -56,10 +56,9 @@ class BooksForm extends React.Component {
   }
 }
 
-
 const mapDispatchToProps = {
-  addBook
-}
+  addBook,
+};
 
 BooksForm.propTypes = {
   addBook: PropTypes.func.isRequired,
