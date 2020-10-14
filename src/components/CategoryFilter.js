@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import categories from './Categories';
+import categories from '../constants/Categories';
 
 const CategoryFilter = ({ handleFilterChange }) => (
   <select onChange={handleFilterChange}>
