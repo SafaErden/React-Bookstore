@@ -23,8 +23,8 @@ class BooksForm extends React.Component {
 
   handleSubmit(e) {
     const { title } = this.state;
-    if (title !== '') {
-      e.preventDefault();
+    e.preventDefault();
+    if (title) {
       const { addBook } = this.props;
       addBook(this.state);
       this.setState({
@@ -33,10 +33,7 @@ class BooksForm extends React.Component {
         category: 'Action',
       });
       e.target.reset();
-    } else {
-      e.preventDefault();
-      alert('Please Type a valid Book Title'); // eslint-disable-line
-    }
+    } 
   }
 
   render() {
