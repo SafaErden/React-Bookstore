@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export default axios.create({
-  baseURL: 'https://blooming-ridge-77280.herokuapp.com/',
+  baseURL: 'https://sheltered-shore-67891.herokuapp.com',
 });

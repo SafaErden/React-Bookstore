@@ -3,13 +3,18 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
 import NavBar from '../components/NavBar';
-import { removeBook, categoryFilter } from '../actions/index';
+import { removeBook, categoryFilter, setBooks } from '../actions/index';
 
 class BooksList extends React.Component {
   constructor(props) {
     super(props);
     this.handleRemoveBook = this.handleRemoveBook.bind(this);
     this.handleFilterChange = this.handleFilterChange.bind(this);
+  }
+
+  componentDidMount () {
+    const { setBooks } = this.props;
+    setBooks();
   }
 
   handleRemoveBook = id => {
@@ -57,13 +62,6 @@ const mapStateToProps = state => ({
   filter: state.filter,
 });
 
-const mapDispatchToProps = dispatch => ({
-  removeBook: id => {
-    dispatch(removeBook(id));
-  },
-  categoryFilter: category => {
-    dispatch(categoryFilter(category));
-  },
-});
+const mapDispatchToProps = {removeBook, categoryFilter, setBooks};
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);

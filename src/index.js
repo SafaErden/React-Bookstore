@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware  } from 'redux';
 import { Provider } from 'react-redux';
 import mainReducer from './reducers/index';
+import thunk from 'redux-thunk';
 import './index.css';
 import App from './components/App';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import getBooks from './api/api'
 
-const store = createStore(mainReducer);
+const store = createStore(mainReducer, {}, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>
