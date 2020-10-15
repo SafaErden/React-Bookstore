@@ -6,6 +6,7 @@ import mainReducer from './reducers/index';
 import './index.css';
 import App from './components/App';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import getBooks from './api/api'
 
 const store = createStore(mainReducer);
 
