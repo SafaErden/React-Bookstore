@@ -1,7 +1,7 @@
 import booksApi from '../api/api';
 const config = {
   headers: {
-    Authorization: 'Token ' + "dde7cd1f579775c04a0b555889c01227"
+    Authorization: 'Token ' + "status"
   }
  }
 export const setBooks = () => async dispatch => {
