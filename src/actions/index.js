@@ -10,10 +10,11 @@ export const addBook = book => async dispatch => {
   dispatch({type:'CREATE_BOOK', book: response.data});
 };
 
-export const removeBook = id => ({
-  type: 'REMOVE_BOOK',
-  id,
-});
+export const removeBook = id => async dispatch => {
+  const response = await booksApi.delete(`/books/${id}`);
+  dispatch({type:'REMOVE_BOOK', id});
+  
+};
 
 export const categoryFilter = category => ({
   type: 'CHANGE_FILTER',
