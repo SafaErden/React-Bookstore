@@ -14,7 +14,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://floating-castle-29981.herokuapp.com/)
+[Live Demo Link](https://jolly-leakey-38e57b.netlify.app/)
 
 ## Setup
 
