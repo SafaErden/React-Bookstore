@@ -14,7 +14,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://taiwo-safa-bookstore.herokuapp.com/)
+[Live Demo Link](https://floating-castle-29981.herokuapp.com/)
 
 ## Setup
 
